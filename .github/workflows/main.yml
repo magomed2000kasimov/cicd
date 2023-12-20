@@ -13,6 +13,6 @@ jobs: #Начало секции джобов
         with:
           python-version: '3.10' #Команда, которая будет выполнена в терминале
       - run: pip install -r requirements.txt
-      - name: run parser #Название шага
+      - name: news #Название шага
         run: python3 msu_news_parser.py
     
