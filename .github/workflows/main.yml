@@ -24,11 +24,9 @@ jobs: #Начало секции джобов
       - name: commit
         run: |
           # Stage the file, commit and push
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git add news.txt
           git commit -m "get news"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: master
+          git push
+          
 
