@@ -15,18 +15,4 @@ jobs: #Начало секции джобов
       - run: pip install -r requirements.txt
       - name: run parser #Название шага
         run: python3 msu_news_parser.py
-
-      - name: setup git config
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "magomed.kasimov.2000@mail.ru"
-
-      - name: commit
-        run: |
-          # Stage the file, commit and push
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git add news.txt
-          git commit -m "get news"
-          git push
-          
-
+    
