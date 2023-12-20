@@ -26,5 +26,9 @@ jobs: #Начало секции джобов
           # Stage the file, commit and push
           git add news.txt
           git commit -m "get news"
-          git push origin master
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master
 
