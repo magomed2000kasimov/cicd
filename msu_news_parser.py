@@ -32,10 +32,14 @@ for page in range(page_count):
 
 with open("news.txt", "w") as file:
     for category in last_news:
-        file.write('\t' + category + '\n\n')
+        #file.write('\t' + category + '\n\n')
+        print('\t' + category + '\n\n')
         for news in last_news[category][:3]:
-            file.write(news["text"] + "\n")
-            file.write(news["date"] + "\n\n")
-        file.write("\n\n")
+            #file.write(news["text"] + "\n")
+            print(news["text"] + "\n")
+            #file.write(news["date"] + "\n\n")
+            print(news["date"] + "\n")
+        #file.write("\n\n")
+        print("\n")
 
 
