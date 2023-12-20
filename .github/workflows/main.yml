@@ -1,0 +1,19 @@
+name: news
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: workflow_dispatch
+
+jobs: #Начало секции джобов
+  get_news: #Название джоба
+    runs-on: ubuntu-latest #Среда выполнения джоба
+    
+    steps: #Начало секции шагов
+      - uses: actions/checkout@main
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10' #Команда, которая будет выполнена в терминале
+      - run: pip install -r requirements.txt
+      - name: run parser #Название шага
+        run: python3 msu_news_parser.py
+        
+
